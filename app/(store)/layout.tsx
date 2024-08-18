@@ -1,9 +1,7 @@
 import type { Metadata } from "next";
-import { Montserrat } from "next/font/google";
+import { Inter } from "next/font/google";
+import Navbar from "@/modules/layout/navbar/templates/navbar";
 import "@/styles/globals.css";
-
-// Import Montserrat font with desired subsets
-const montserrat = Montserrat({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -16,8 +14,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={montserrat.className}>{children}</body>
-    </html>
+      <>
+      <Navbar/>
+      {children}
+      </>
   );
 }
